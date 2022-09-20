@@ -8,6 +8,7 @@ def lambda_handler(event, context):
     query = {'q':'gurgaon,in', 'units':'metric', 'APPID' : '4324efc8b49587301d3d1d043f171132'}
     response = requests.get("http://api.openweathermap.org/data/2.5/weather", params=query)
     weather=response.json()
+    print(weather)
     main=weather["main"]
     sys=weather["sys"]
     sky=weather["weather"]
